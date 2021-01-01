@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	
+	<welcome-file-list>
+		<welcome-file>login.html</welcome-file>
+	</welcome-file-list>
+
+	 <!--实训场景003 模拟用户登录 登陆Servlet的创建与配置 【1/4 Start】-->
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>web.servlet.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/login.jhtml</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>RegisterServlet</servlet-name>
+		<servlet-class>web.servlet.RegisterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterServlet</servlet-name>
+		<url-pattern>/register.jhtml</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>CheckCodeServlet</servlet-name>
+		<servlet-class>web.servlet.CheckCodeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CheckCodeServlet</servlet-name>
+		<url-pattern>/code.jhtml</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Per_inf_Servlet</servlet-name>
+		<servlet-class>web.servlet.Per_inf_Servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Per_inf_Servlet</servlet-name>
+		<url-pattern>/personal_information.html</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>HeadServlet</servlet-name>
+		<servlet-class>web.servlet.HeadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HeadServlet</servlet-name>
+		<url-pattern>/crop.jhtml</url-pattern>
+	</servlet-mapping>
+
+	<!--<servlet>
+		<servlet-name>UserServlet</servlet-name>
+		<servlet-class>web.servlet.UserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserServlet</servlet-name>
+		<url-pattern>/login.jhtml</url-pattern>
+	</servlet-mapping>-->
+
+
+
+
+
+
+
+
+
+
+
+	<!-- 实训场景003 模拟用户登录 登陆Servlet的创建与配置 【1/4 End】 -->
+	
+</web-app>
