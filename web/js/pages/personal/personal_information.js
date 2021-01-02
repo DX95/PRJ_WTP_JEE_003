@@ -459,7 +459,7 @@ function modifyrow(e) {
 	var changeCardNo = $('#' + fatherid).children('td').eq(3).text();
 	var changeEmail = $('#' + fatherid).children('td').eq(4).text();
 	var changeSex = $('#' + fatherid).children('td').eq(5).text();
-	var changeBirth = $('#' + fatherid).children('td').eq(6).text();
+	//var changeBirth = $('#' + fatherid).children('td').eq(6).text();
 
 	$('input[name="c_name"]').val(changeName);
 	$('input[name="c_mobile"]').val(changePhone);
@@ -472,24 +472,24 @@ function modifyrow(e) {
 		$('select[name="c_sex"]')[0].selectedIndex = 1;
 	}
 	// 对出生日期进行处理
-	var time = changeBirth.replace(/-/g, "/");
-	time = new Date(time);
-	year = time.getFullYear();
-	month = time.getMonth() + 1;
-	date = time.getDate();
-	
-	$("#sel_year").attr("rel",year);
-	$("#sel_month").attr("rel",month);
-	$("#sel_day").attr("rel",date);
-	$.ms_DatePicker();
-	
-	$('select[name="c_sel_year"]').find("option[value=" + year + "]").attr(
-			"selected", true);
-	$('select[name="c_sel_month"]').find("option[value=" + month + "]").attr(
-			"selected", true);
-	$('select[name="c_sel_day"]').find("option[value=" + date + "]").attr(
-			"selected", true);
-
-	modifyId = $(e).parent().parent().attr('id');
-	$("#save_tourist").attr('onclick', 'checkUpdateContact()');
+	// var time = changeBirth.replace(/-/g, "/");
+	// time = new Date(time);
+	// year = time.getFullYear();
+	// month = time.getMonth() + 1;
+	// date = time.getDate();
+	//
+	// $("#sel_year").attr("rel",year);
+	// $("#sel_month").attr("rel",month);
+	// $("#sel_day").attr("rel",date);
+	// $.ms_DatePicker();
+	//
+	// $('select[name="c_sel_year"]').find("option[value=" + year + "]").attr(
+	// 		"selected", true);
+	// $('select[name="c_sel_month"]').find("option[value=" + month + "]").attr(
+	// 		"selected", true);
+	// $('select[name="c_sel_day"]').find("option[value=" + date + "]").attr(
+	// 		"selected", true);
+	//
+	// modifyId = $(e).parent().parent().attr('id');
+	// $("#save_tourist").attr('onclick', 'checkUpdateContact()');
 }

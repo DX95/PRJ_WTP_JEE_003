@@ -29,14 +29,19 @@ public class LoginServlet extends HttpServlet {
         if (use==null){
             response.sendRedirect(request.getContextPath()+"/login.jsp?type=loginerror");
         }else {
+            //将用户信息存入session域
             session.setAttribute("use",use);
+            //将用户账号存入session域
             session.setAttribute("tid",tid);
+            //保存账号密码到cookie
             Cookie cookie = new Cookie("tid",tid);
             Cookie cookie2 = new Cookie("pwd",pwd);
             cookie.setMaxAge(60*5);
             cookie2.setMaxAge(60*5);
+            //发送cookie，完成用户名密码的自动填写
             response.addCookie(cookie);
             response.addCookie(cookie2);
+
             response.sendRedirect(request.getContextPath()+"/index.jsp");
         }
             //response.sendRedirect(request.getContextPath()+"/index.jsp");

@@ -35,7 +35,7 @@
         });
     </script>
 
-    <script type="text/javascript" src="js/person_information.js"></script>
+<%--    <script type="text/javascript" src="js/person_information.js"></script>--%>
     <script type="text/javascript" src="js/jquery.DB_gallery.js"></script>
 
     <!-- 星星等级插件 -->

@@ -20,7 +20,7 @@ public class CharsetFilter implements Filter {
             request.setCharacterEncoding("utf-8");
         }
         response.setContentType("text/html;charset=utf-8");
-        chain.doFilter(req,resp);
+        chain.doFilter(request,response);
     }
 
     public void destroy() {

@@ -50,11 +50,11 @@ public class UserDaoImp implements UserDao {
         try {
             if (b){
                 System.out.println("是邮箱！");
-                sql="select * from user where email=? and password=?;";
+                sql="select * from user where email=? and password=?";
                 use=template.queryForObject(sql,new BeanPropertyRowMapper<User>(User.class),tid,pwd);
              }else {
                 System.out.println("是手机号！");
-                sql="select * from user where phone=? and password=?;";
+                sql="select * from user where phone=? and password=?";
                 use=template.queryForObject(sql,new BeanPropertyRowMapper<User>(User.class),tid,pwd);
             }
 

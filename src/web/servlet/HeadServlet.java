@@ -32,7 +32,7 @@ public class HeadServlet extends HttpServlet {
         String newname = cd.substring(cd.lastIndexOf("."));
         System.out.println(newname);
 
-        String realPath = getServletContext().getRealPath("/img");
+        String realPath = getServletContext().getRealPath("/web/img");
         java.io.File file = new java.io.File(realPath);
         if (!file.exists()) {
             file.mkdirs();

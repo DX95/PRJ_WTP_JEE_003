@@ -52,7 +52,8 @@ public class TestServlet extends HttpServlet {
                     //获取文件内容并上传，定义文件路径，指定上传的位置（服务器路径）
                     //String path=request.getSession().getServletContext().getRealPath("upload");
                    // String path=getServletContext().getRealPath("/phono");
-                    String path="E:\\IDEA项目\\PRJ_WTP_JEE_003\\web\\img";
+                    String path="E:\\Github\\PRJ_WTP_JEE_003\\web\\img";
+                   // String path=request.getSession().getServletContext().getRealPath("/img");
                     File file=new File(path,filename);
                     item.write(file);//上传
                     HttpSession session = request.getSession();
