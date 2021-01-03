@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String path = request.getContextPath();
@@ -50,30 +51,52 @@
             <div class="navigation-content">
                 <center>
                     <table class="navigation-table">
+                        <%--<c:forEach items="${Place}" var="place" >
+                            <tr>
+                                <c:if test="${place.id%2!=0}">
+                                    <td align="right" width="100px"><a href="../trip/search.html">${place.name}</a></td>
+                                </c:if>
+                                <td width="30px"></td>
+                                <c:if test="${(place.id+1)%2==0}">
+                                    <td align="left" width="100px"><a href="../trip/search.html">${place.name}</a></td>
+                                </c:if>
+
+                            </tr>
+                        </c:forEach>--%>
+
+                           <%-- <c:forEach items="${Place}" var="place" begin="1" step="2">
+                            <tr>
+                                <td align="left" width="100px"><a href="../trip/search.html">${place.name}</a></td>
+                                <td width="30px"></td>
+                                <c:forEach items="${Place}" var="place" begin="0" step="2">
+                                    <td align="right" width="100px"><a href="../trip/search.html">${place.name}</a></td>
+                                </c:forEach>
+                            </tr>
+                            </c:forEach>--%>
                         <tr>
-                            <td align="right" width="100px"><a href="../trip/search.html">上海</a></td>
+                             <td align="right"><a href="../trip/search.html">${Place[0].name}</a></td>
                             <td width="30px"></td>
-                            <td align="left" width="100px"><a href="../trip/search.html">常州</a></td>
+                            <td align="left"><a href="../trip/search.html">${Place[1].name}</a></td>
                         </tr>
                         <tr>
-                            <td align="right"><a href="../trip/search.html">无锡</a></td>
+                            <td align="right"><a href="../trip/search.html">${Place[2].name}</a></td>
                             <td></td>
-                            <td align="left"><a href="../trip/search.html">杭州</a></td>
+                            <td align="left"><a href="../trip/search.html">${Place[3].name}</a></td>
                         </tr>
                         <tr>
-                            <td align="right"><a href="../trip/search.html">天目湖</a></td>
+                            <td align="right"><a href="../trip/search.html">${Place[4].name}</a></td>
                             <td></td>
-                            <td align="left"><a href="../trip/search.html">三清山</a></td>
+                            <td align="left"><a href="../trip/search.html">${Place[5].name}</a></td>
                         </tr>
                         <tr>
-                            <td align="right"><a href="../trip/search.html">西塘</a></td>
+                            <td align="right"><a href="../trip/search.html">${Place[6].name}</a></td>
                             <td></td>
-                            <td align="left"><a href="../trip/search.html">黄山</a></td>
+                            <td align="left"><a href="../trip/search.html">${Place[7].name}</a></td>
                         </tr>
                         <tr>
-                            <td align="right"><a href="../trip/search.html">厦门</a></td>
+                            <td align="right"><a href="../trip/search.html">${Place[8].name}</a></td>
                             <td></td>
-                            <td align="left"><a href="../trip/search.html">安吉</a></td>
+                            <td align="left"><a href="../trip/search.html">${Place[9].name}</a></td>
                         </tr>
                     </table>
                     <!-- 场景 PRJ-WTP-WEB-004：热门景点 - 景点列表1 【1/2 end】 -->
