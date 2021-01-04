@@ -12,18 +12,15 @@ import java.util.Set;
 
 public class Trip implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
-	private int id;
-	private int num;
-	private String title;
-	private String s_title;
+	private int id;//主键
+	private int num;//
+	private String title; //产品标题
+	private String s_title; //
 	private String traffic;
 	private String hotel;
-	private Integer time;
+	private Integer time; //天数
 	private float good_rate;
 	private float place_score;
 	private float hotel_score;

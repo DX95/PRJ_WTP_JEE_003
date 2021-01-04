@@ -241,7 +241,7 @@
             </div>
             <div class="tail">
                 <p class="result">
-                    <b>949</b>条结果
+                    <b>${PageBean.totalcount}</b>条结果
                 </p>
                 <dl class="request_list">
                     <dt>您已选择：</dt>
@@ -341,7 +341,7 @@
                         </li>
                     </ul>
                     <div class="page">
-                        <p class="count_num"><b>1</b>/26</p>
+                        <p class="count_num"><b>${PageBean.currentpage}</b>/${PageBean.totalpage}</p>
                         <a class="prev page_no" href="#"><i class="arrow_p"></i></a>
                         <a class="next" href="#"><i class="arrow_n"></i></a>
                     </div>
@@ -351,74 +351,77 @@
                 <!-- 产品列表【开始】 -->
 
                 <!-- 第一个搜索记录【start】 -->
-                <div class="recommend">
-                    <div class="detail">
-                        <a class="detail_img" href="#">
-                            <img src="img/pic1.jpg" width="195" height="130">
-                            <span class="detail_tag detail_tag_blue">自驾游</span>
-                        </a>
-                        <div class="price">
-                            <p class="priceTitle">去哪玩价:</p>
-                            <p class="priceBox">
+               <c:forEach items="${PageBean.list}" var="list" >
+                   <div class="recommend">
+                       <div class="detail">
+                           <a class="detail_img" href="#">
+                               <img src="img/pic1.jpg" width="195" height="130">
+                               <span class="detail_tag detail_tag_blue">自驾游</span>
+                           </a>
+                           <div class="price">
+                               <p class="priceTitle">去哪玩价:</p>
+                               <p class="priceBox">
 								<span>
 									¥ <b>628</b>
 								</span>
-                                <label name="origLable">起/人</label>
-                            </p>
-                            <p class="good_comment"><span>98%</span>好评率</p>
-                        </div>
-                        <div class="detail">
-                            <div class="detail_list">
-                                <p class="detail_title">
-                                    <span class="title_left">上海出发 |</span>
-                                    <a href="../tourist_detail/tourist_detail.html">
-                                        【千岛湖秀水度假酒店湖景房】千岛湖森林氧吧、自行车骑行纯玩巴士3日游（可选行程：千岛湖中心湖）
-                                    </a>
-                                </p>
-                                <dl class="detail_text theme_text">
-                                    <dt>主&nbsp;题</dt>
-                                    <dd><p>山水景观,游船,海滨岛屿</p></dd>
-                                </dl>
-                            </div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="discribe">
-                        <ul>
-                            <li>
-                                <p><span class="icon icon_traffic"></span>交通</p>
-                                <p>
-                                    <span>大巴往返</span>
-                                    <span><a href="#"></a></span>
-                                </p>
-                            </li>
-                            <li class="js_tips" tip-content="">
-                                <p><span class="icon icon_stay"></span>住宿</p>
-                                <p>
-                                    <span>四星或同等酒店</span>
-                                    <span><a href="#"></a></span>
-                                </p>
-                            </li>
-                            <li class="js_tips" tip-content="">
-                                <p><span class="icon icon_time"></span>行程天数</p>
-                                <p>
-                                    <span>3天</span>
-                                    <span><a href="../tourist_detail/tourist_detail.html" class="more">更多</a></span>
-                                </p>
-                            </li>
-                            <li class="js_tips" tip-content="">
-                                <p><span class="icon icon_date"></span>出发日期</p>
-                                <p>
-                                    <span>10/30</span>
-                                    <span><a href="../tourist_detail/tourist_detail.html" class="more">更多</a></span>
-                                </p>
-                            </li>
-                        </ul>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="tip"></div>
-                    <div class="clear"></div>
-                </div>
+                                   <label name="origLable">起/人</label>
+                               </p>
+                               <p class="good_comment"><span>98%</span>好评率</p>
+                           </div>
+                           <div class="detail">
+                               <div class="detail_list">
+                                   <p class="detail_title">
+                                       <span class="title_left">上海出发 |</span>
+                                       <a href="../tourist_detail/tourist_detail.html">
+                                               ${list.title}
+                                       </a>
+                                   </p>
+                                   <dl class="detail_text theme_text">
+                                       <dt>主&nbsp;题</dt>
+                                       <dd><p>山水景观,游船,海滨岛屿</p></dd>
+                                   </dl>
+                               </div>
+                           </div>
+                           <div class="clear"></div>
+                       </div>
+                       <div class="discribe">
+                           <ul>
+                               <li>
+                                   <p><span class="icon icon_traffic"></span>交通</p>
+                                   <p>
+                                       <span>${list.traffic}</span>
+                                       <span><a href="#"></a></span>
+                                   </p>
+                               </li>
+                               <li class="js_tips" tip-content="">
+                                   <p><span class="icon icon_stay"></span>住宿</p>
+                                   <p>
+                                       <span>${list.hotel}</span>
+                                       <span><a href="#"></a></span>
+                                   </p>
+                               </li>
+                               <li class="js_tips" tip-content="">
+                                   <p><span class="icon icon_time"></span>行程天数</p>
+                                   <p>
+                                       <span>3天</span>
+                                       <span><a href="../tourist_detail/tourist_detail.html" class="more">更多</a></span>
+                                   </p>
+                               </li>
+                               <li class="js_tips" tip-content="">
+                                   <p><span class="icon icon_date"></span>出发日期</p>
+                                   <p>
+                                       <span>10/30</span>
+                                       <span><a href="../tourist_detail/tourist_detail.html" class="more">更多</a></span>
+                                   </p>
+                               </li>
+                           </ul>
+                           <div class="clear"></div>
+                       </div>
+                       <div class="tip"></div>
+                       <div class="clear"></div>
+                   </div>
+                </c:forEach>
+
                 <!-- 第一个搜索记录【end】 -->
 
                 <!-- 产品列表【结束】 -->

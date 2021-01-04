@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchDaoImp implements SearchDao {
+
     private JdbcTemplate template=new JdbcTemplate(DBuntil.getDataSource());
 
     @Override
@@ -42,6 +43,7 @@ public class SearchDaoImp implements SearchDao {
         sql=sb.toString();
         System.out.println(sql);
         System.out.println(list);
-        return template.query(sql,new BeanPropertyRowMapper<Trip>(Trip.class),list.toArray());
+        List<Trip> query = template.query(sql, new BeanPropertyRowMapper<Trip>(Trip.class), list.toArray());
+        return query;
     }
 }

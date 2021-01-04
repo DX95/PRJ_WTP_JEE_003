@@ -1,6 +1,7 @@
 package web.servlet;
 
 import domain.Pagebean;
+import domain.Trip;
 import service.SearchService;
 import service.serviceImp.SearchServiceImp;
 
@@ -19,7 +20,7 @@ public class SearchServlet extends HttpServlet {
         String type = request.getParameter("type");
         String currentpages = request.getParameter("Currentpage");
         String rows = request.getParameter("rows");
-
+        System.out.println(type);
         String str=null;
         if (type!=null&&!type.equals("")){
             str = new String(type.getBytes("ISO8859-1"), "UTF-8");
@@ -41,9 +42,10 @@ public class SearchServlet extends HttpServlet {
         }
 
        SearchService service=new SearchServiceImp();
-       Pagebean pagebean=service.SearchPagebean(str,row,currentpage);
-       request.setAttribute("pagebean",pagebean);
-       request.getRequestDispatcher("search.jsp").forward(request,response);
+       Pagebean<Trip> pagebean=service.SearchPagebean(str,row,currentpage);
+       request.setAttribute("PageBean",pagebean);
+       request.getRequestDispatcher("/search.jsp").forward(request,response);
+        //response.getWriter().write(pagebean.toString());
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

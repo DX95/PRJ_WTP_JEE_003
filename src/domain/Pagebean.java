@@ -2,61 +2,62 @@ package domain;
 
 import java.util.List;
 
-public class Pagebean {
-    private Integer Totalpage;
-    private Integer Currentpage ;
-    private Integer rows;
-    private Integer Totalcount;
-    private List<Trip> list;
+public class Pagebean<T> {
+
+    private int totalpage;
+    private int currentpage ;
+    private int rows;
+    private int totalcount;
+    private List<T> list;
 
     @Override
     public String toString() {
         return "Pagebean{" +
-                "Totalpage=" + Totalpage +
-                ", Currentpage=" + Currentpage +
+                "totalpage=" + totalpage +
+                ", currentpage=" + currentpage +
                 ", rows=" + rows +
-                ", Totalcount=" + Totalcount +
+                ", totalcount=" + totalcount +
                 ", list=" + list +
                 '}';
     }
 
-    public Integer getTotalpage() {
-        return Totalpage;
+    public int getTotalpage() {
+        return totalpage;
     }
 
-    public void setTotalpage(Integer totalpage) {
-        Totalpage = totalpage;
+    public void setTotalpage(int totalpage) {
+        this.totalpage = totalpage;
     }
 
-    public Integer getCurrentpage() {
-        return Currentpage;
+    public int getCurrentpage() {
+        return currentpage;
     }
 
-    public void setCurrentpage(Integer currentpage) {
-        Currentpage = currentpage;
+    public void setCurrentpage(int currentpage) {
+        this.currentpage = currentpage;
     }
 
-    public Integer getRows() {
+    public int getRows() {
         return rows;
     }
 
-    public void setRows(Integer rows) {
+    public void setRows(int rows) {
         this.rows = rows;
     }
 
-    public Integer getTotalcount() {
-        return Totalcount;
+    public int getTotalcount() {
+        return totalcount;
     }
 
-    public void setTotalcount(Integer totalcount) {
-        Totalcount = totalcount;
+    public void setTotalcount(int totalcount) {
+        this.totalcount = totalcount;
     }
 
-    public List getList() {
+    public List<T> getList() {
         return list;
     }
 
-    public void setList(List list) {
+    public void setList(List<T> list) {
         this.list = list;
     }
 }
