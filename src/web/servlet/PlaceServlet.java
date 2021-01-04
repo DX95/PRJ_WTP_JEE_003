@@ -1,6 +1,7 @@
 package web.servlet;
 
 import domain.Place;
+import domain.Theme;
 import service.TravelService;
 import service.serviceImp.TravelServiceImp;
 
@@ -9,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -16,13 +18,27 @@ import java.util.List;
 public class PlaceServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         TravelService service=new TravelServiceImp();
-        List<Place> list=service.FinallPlace();
-        Object[] obj=new Object[5];
-        for (Place place : list) {
+        List<Place> Place=service.FinallPlace();
+        for (Place place : Place) {
             System.out.println(place.toString());
         }
-        request.setAttribute("Place",list);
-        request.getRequestDispatcher("index.jsp").forward(request,response);
+        HttpSession session = request.getSession();
+        session.setAttribute("Place",Place);
+
+        List<Theme> themes=service.finallTheme();
+        for (Theme theme: themes) {
+            System.out.println(theme);
+        }
+        session.setAttribute("Theme",themes);
+
+       /* List<Theme> themes=service.finallTheme();
+        for (Theme theme: themes) {
+            System.out.println(theme);
+        }
+        request.setAttribute("Theme",themes);*/
+        response.sendRedirect(request.getContextPath()+"/index.jsp");
+        //request.getRequestDispatcher("index.jsp").forward(request,response);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

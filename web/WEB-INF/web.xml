@@ -41,6 +41,7 @@
 		<servlet-name>Per_inf_Servlet</servlet-name>
 		<url-pattern>/personal_information.html</url-pattern>
 	</servlet-mapping>
+
 	<servlet>
 		<servlet-name>HeadServlet</servlet-name>
 		<servlet-class>web.servlet.HeadServlet</servlet-class>

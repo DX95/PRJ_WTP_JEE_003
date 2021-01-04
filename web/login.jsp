@@ -69,11 +69,13 @@
             }
         })
     </script>
+
     <%!
         String name;
         String pwd;
     %>
-    <%
+
+   <%-- <%
         Cookie[] cookies= request.getCookies();
         for (Cookie cookie : cookies) {
             if (cookie.getName().equals("tid")){
@@ -82,7 +84,7 @@
                 pwd=cookie.getValue();
             }
         }
-    %>
+    %>--%>
 </head>
 <body>
 <!-- 背景  开始 -->

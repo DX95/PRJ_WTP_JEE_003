@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
             return;
         }*/
         User use=service.login(tid,pwd);
-        System.out.println(use.toString());
+        // System.out.println(use.toString());
         if (use==null){
             response.sendRedirect(request.getContextPath()+"/login.jsp?type=loginerror");
         }else {
@@ -42,7 +42,7 @@ public class LoginServlet extends HttpServlet {
             response.addCookie(cookie);
             response.addCookie(cookie2);
 
-            response.sendRedirect(request.getContextPath()+"/index.jsp");
+            response.sendRedirect(request.getContextPath()+"/PlaceServlet");
         }
             //response.sendRedirect(request.getContextPath()+"/index.jsp");
 

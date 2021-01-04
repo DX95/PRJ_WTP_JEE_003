@@ -94,7 +94,7 @@ document.writeln("						</ul>");
 document.writeln("					</div>");
 document.writeln("				</div>");
 document.writeln("                <div class=\"search_input\">");
-document.writeln("                    <form class=\"form_search\">");
+document.writeln("                    <form class=\"form_search\" >");
 document.writeln("                        <input type=\"text\" id=\"search\" autocomplete=\"off\" value=\"目的地、主题、签证或景区名称\" x-webkit-speech=\"\"");
 document.writeln("                               class=\"search w_260\" num=\"0\">");
 document.writeln("						<input type=\"hidden\" id=\"type\" name=\"type\" value=\"\"/>");

@@ -111,29 +111,29 @@
                 <center>
                     <table class="navigation-table">
                         <tr>
-                            <td align="right" width="100px"><a href="../trip/search.html">亲子出游</a></td>
+                            <td align="right" width="100px"><a href="../trip/search.html">${Theme[0].name}</a></td>
                             <td width="30px"></td>
-                            <td align="left" width="100px"><a href="../trip/search.html">节日出游</a></td>
+                            <td align="left" width="100px"><a href="../trip/search.html">${Theme[1].name}</a></td>
                         </tr>
                         <tr>
-                            <td align="right"><a href="../trip/search.html">度假酒店</a></td>
+                            <td align="right"><a href="../trip/search.html">${Theme[2].name}</a></td>
                             <td></td>
-                            <td align="left"><a href="../trip/search.html">民山游览</a></td>
+                            <td align="left"><a href="../trip/search.html">${Theme[3].name}</a></td>
                         </tr>
                         <tr>
-                            <td align="right"><a href="../trip/search.html">主题乐园</a></td>
+                            <td align="right"><a href="../trip/search.html">${Theme[4].name}</a></td>
                             <td></td>
-                            <td align="left"><a href="../trip/search.html">温泉泡汤</a></td>
+                            <td align="left"><a href="../trip/search.html">${Theme[5].name}</a></td>
                         </tr>
                         <tr>
-                            <td align="right"><a href="../trip/search.html">古镇村落</a></td>
+                            <td align="right"><a href="../trip/search.html">${Theme[6].name}</a></td>
                             <td></td>
-                            <td align="left"><a href="../trip/search.html">山水景观</a></td>
+                            <td align="left"><a href="../trip/search.html">${Theme[7].name}</a></td>
                         </tr>
                         <tr>
-                            <td align="right"><a href="../trip/search.html">金牌产品</a></td>
+                            <td align="right"><a href="../trip/search.html">${Theme[8].name}</a></td>
                             <td></td>
-                            <td align="left"><a href="../trip/search.html">尾房甩卖</a></td>
+                            <td align="left"><a href="../trip/search.html">${Theme[9].name}</a></td>
                         </tr>
                     </table>
                 </center>
