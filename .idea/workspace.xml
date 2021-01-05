@@ -192,7 +192,6 @@
       <item itemvalue="Application.test" />
       <item itemvalue="Tomcat Server.Tomcat 7" />
     </list>
-<<<<<<< HEAD
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -200,19 +199,12 @@
         <serviceView>
           <option name="contentProportion" value="0.18920764" />
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
       </list>
     </option>
-=======
->>>>>>> f46c057a1f0964c9e3f72a5974e977412176f692
   </component>
   <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
@@ -251,12 +243,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="449" y="407" key="#Tomcat_Server" timestamp="1609822821718">
