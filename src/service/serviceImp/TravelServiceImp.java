@@ -4,6 +4,7 @@ import dao.TravelDao;
 import dao.daoImp.TravelDaoImp;
 import domain.Place;
 import domain.Theme;
+import domain.trip2;
 import service.TravelService;
 
 import java.sql.SQLOutput;
@@ -21,5 +22,11 @@ public class TravelServiceImp implements TravelService {
     public List<Theme> finallTheme() {
         List<Theme> list =dao.finallTheme();
         return list;
+    }
+
+    @Override
+    public List<trip2> findallInf() {
+        List<trip2> infs=dao.findallInf();
+        return infs;
     }
 }

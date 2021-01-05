@@ -13,14 +13,7 @@ public class trip2 implements Serializable {
     private String time;
     private Date date;
     private String name;
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
+    private String s_title;
 
     @Override
     public String toString() {
@@ -33,7 +26,24 @@ public class trip2 implements Serializable {
                 ", time='" + time + '\'' +
                 ", date=" + date +
                 ", name='" + name + '\'' +
+                ", s_title='" + s_title + '\'' +
                 '}';
+    }
+
+    public String getS_title() {
+        return s_title;
+    }
+
+    public void setS_title(String s_title) {
+        this.s_title = s_title;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getTime() {

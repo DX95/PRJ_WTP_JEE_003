@@ -151,23 +151,25 @@
         <div class="pro-list">
             <!-- 场景 PRJ-WTP-WEB-003：推荐景点列表排序 - 列表1 【1/3 start】 -->
             <ul>
-                <li>
-                    <div class="pro_list_content">
-                        <!-- 场景 PRJ-WTP-WEB-002：推荐景点图像显示 【1/1 start】 -->
-                        <p>
-                            <img src="images/01.jpg" width="290" height="200" border="1">
-                        </p>
-                        <p onmouseover="movein(this)" onmouseout="moveout(this)">
+                <c:forEach items="${infs}" var="inf">
+                    <li>
+                        <div class="pro_list_content">
+                            <!-- 场景 PRJ-WTP-WEB-002：推荐景点图像显示 【1/1 start】 -->
+                            <p>
+                                <img src="image_cache/${inf.name}" width="290" height="200" border="1">
+                            </p>
+                            <p onmouseover="movein(this)" onmouseout="moveout(this)">
 							<span class="pro-list-price fr">
 								<span>￥</span>
-								<span>290</span>&nbsp;起
+								<span>${inf.price}</span>&nbsp;起
 							</span>
-                            <span>111恐龙城万圣节</span>
-                        </p>
+                                <span>${inf.s_title}</span>
+                            </p>
+                        </div>
+                    </li>
+                </c:forEach>
 
-                    </div>
-                </li>
-                <li>
+                <%--<li>
                     <div class="pro_list_content">
                         <p ><a href="../tourist_detail/tourist_detail.html" title="111恐龙城万圣节" target="_blank"><img src="./images/02.jpeg"
                                                                                                                    alt="111恐龙城万圣节" width="290"
@@ -213,7 +215,7 @@
                                                                                                                                                  target="_blank">111千岛湖2天1晚·住希尔顿</a>
                         </p>
                     </div>
-                </li>
+                </li>--%>
             </ul>
         </div>
     </div>
