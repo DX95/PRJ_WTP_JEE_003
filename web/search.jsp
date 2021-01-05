@@ -355,14 +355,14 @@
                    <div class="recommend">
                        <div class="detail">
                            <a class="detail_img" href="#">
-                               <img src="img/pic1.jpg" width="195" height="130">
+                               <img src="image_cache/${list.name}" width="195" height="130">
                                <span class="detail_tag detail_tag_blue">自驾游</span>
                            </a>
                            <div class="price">
                                <p class="priceTitle">去哪玩价:</p>
                                <p class="priceBox">
 								<span>
-									¥ <b>628</b>
+									¥ <b>${list.price}</b>
 								</span>
                                    <label name="origLable">起/人</label>
                                </p>
@@ -403,14 +403,14 @@
                                <li class="js_tips" tip-content="">
                                    <p><span class="icon icon_time"></span>行程天数</p>
                                    <p>
-                                       <span>3天</span>
+                                       <span>${list.time}</span>
                                        <span><a href="../tourist_detail/tourist_detail.html" class="more">更多</a></span>
                                    </p>
                                </li>
                                <li class="js_tips" tip-content="">
                                    <p><span class="icon icon_date"></span>出发日期</p>
                                    <p>
-                                       <span>10/30</span>
+                                       <span>${list.date}</span>
                                        <span><a href="../tourist_detail/tourist_detail.html" class="more">更多</a></span>
                                    </p>
                                </li>

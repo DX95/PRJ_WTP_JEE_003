@@ -2,6 +2,7 @@ package web.servlet;
 
 import domain.Place;
 import domain.Theme;
+import domain.trip2;
 import service.TravelService;
 import service.serviceImp.TravelServiceImp;
 
@@ -31,6 +32,8 @@ public class PlaceServlet extends HttpServlet {
         }
         session.setAttribute("Theme",themes);
 
+        List<trip2> infs=service.findallInf();
+        session.setAttribute("infs",infs);
        /* List<Theme> themes=service.finallTheme();
         for (Theme theme: themes) {
             System.out.println(theme);

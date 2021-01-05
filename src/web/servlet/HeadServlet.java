@@ -16,8 +16,8 @@ public class HeadServlet extends HttpServlet {
 
         System.out.println("000");
         Part part = request.getPart("image");
-        // String FileName = part.getSubmittedFileName();
-        // String newname = System.currentTimeMillis() + FileName.substring(FileName.lastIndexOf("."));
+      /*  String FileName = part.getSubmittedFileName();
+        String newname = System.currentTimeMillis() + FileName.substring(FileName.lastIndexOf("."));*/
         if (part==null){
             return;
         }

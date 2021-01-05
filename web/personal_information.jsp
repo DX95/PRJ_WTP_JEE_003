@@ -132,7 +132,7 @@
                     <img src="img/1.jpg" class="img_head" />
                 </c:when>
                 <c:otherwise>
-                    <img src="img/${use.img_path}" class="img_head" />
+                    <img src="image_cache/${use.img_path}" class="img_head" />
                 </c:otherwise>
             </c:choose>
 

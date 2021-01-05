@@ -2,6 +2,7 @@ package dao.daoImp;
 
 import dao.SearchDao;
 import domain.Trip;
+import domain.trip2;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.w3c.dom.ls.LSInput;
@@ -29,10 +30,18 @@ public class SearchDaoImp implements SearchDao {
     }
 
     @Override
-    public List<Trip> findList(String type, int star,int row) {
-        String sql="select *from trip where 1=1 ";
+    public List<trip2> findList(String type, int star,int row) {
+        String sql="SELECT \n" +
+                "title,traffic,hotel,price,time,name,p.date\n" +
+                "FROM \n" +
+                "trip t, price p ,trippicture pic\n" +
+                "WHERE \n" +
+                "1=1";
+        //SELECT title,traffic,hotel,price,date FROM trip t, price p WHERE t.id=p.id and title LIKE '%上海%'
         StringBuilder sb=new StringBuilder(sql);
         List list=new ArrayList();
+        sb.append(" and t.id=p.id ");
+        sb.append(" and pic.id=t.id ");
         if (type!=null&&!type.equals("")){
             sb.append(" and title LIKE ? ");
             list.add("%"+type+"%");
@@ -43,7 +52,7 @@ public class SearchDaoImp implements SearchDao {
         sql=sb.toString();
         System.out.println(sql);
         System.out.println(list);
-        List<Trip> query = template.query(sql, new BeanPropertyRowMapper<Trip>(Trip.class), list.toArray());
+        List<trip2> query = template.query(sql, new BeanPropertyRowMapper<trip2>(trip2.class), list.toArray());
         return query;
     }
 }

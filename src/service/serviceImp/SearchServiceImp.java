@@ -4,6 +4,7 @@ import dao.SearchDao;
 import dao.daoImp.SearchDaoImp;
 import domain.Pagebean;
 import domain.Trip;
+import domain.trip2;
 import service.SearchService;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class SearchServiceImp implements SearchService {
         pagebean.setTotalpage(Totalpage);
 
         int star=(currentpage-1)*row;
-        List<Trip> list= dao.findList(type,star,row);
+        List<trip2> list= dao.findList(type,star,row);
         pagebean.setList(list);
 
         return pagebean;
