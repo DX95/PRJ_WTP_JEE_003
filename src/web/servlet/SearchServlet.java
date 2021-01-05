@@ -45,8 +45,8 @@ public class SearchServlet extends HttpServlet {
        SearchService service=new SearchServiceImp();
        Pagebean<trip2> pagebean=service.SearchPagebean(str,row,currentpage);
        request.setAttribute("PageBean",pagebean);
-       //request.getRequestDispatcher("/search.jsp").forward(request,response);
-        response.getWriter().write(pagebean.toString());
+       request.getRequestDispatcher("/search.jsp").forward(request,response);
+        //response.getWriter().write(pagebean.toString());
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

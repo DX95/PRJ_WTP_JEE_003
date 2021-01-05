@@ -31,11 +31,17 @@ public class SearchDaoImp implements SearchDao {
 
     @Override
     public List<trip2> findList(String type, int star,int row) {
-        String sql="SELECT title,traffic,hotel,price,date FROM trip t, price p where 1=1 ";
+        String sql="SELECT \n" +
+                "title,traffic,hotel,price,time,name,p.date\n" +
+                "FROM \n" +
+                "trip t, price p ,trippicture pic\n" +
+                "WHERE \n" +
+                "1=1";
         //SELECT title,traffic,hotel,price,date FROM trip t, price p WHERE t.id=p.id and title LIKE '%上海%'
         StringBuilder sb=new StringBuilder(sql);
         List list=new ArrayList();
         sb.append(" and t.id=p.id ");
+        sb.append(" and pic.id=t.id ");
         if (type!=null&&!type.equals("")){
             sb.append(" and title LIKE ? ");
             list.add("%"+type+"%");

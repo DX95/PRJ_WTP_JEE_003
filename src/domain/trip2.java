@@ -10,8 +10,17 @@ public class trip2 implements Serializable {
     private String traffic;
     private String hotel;
     private double price;
+    private String time;
     private Date date;
-    private String img;
+    private String name;
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     @Override
     public String toString() {
@@ -21,9 +30,18 @@ public class trip2 implements Serializable {
                 ", traffic='" + traffic + '\'' +
                 ", hotel='" + hotel + '\'' +
                 ", price=" + price +
+                ", time='" + time + '\'' +
                 ", date=" + date +
-                ", img='" + img + '\'' +
+                ", name='" + name + '\'' +
                 '}';
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public int getId() {
@@ -66,19 +84,13 @@ public class trip2 implements Serializable {
         this.price = price;
     }
 
-    public Date getDate() {
-        return date;
+
+
+    public String getName() {
+        return name;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
+    public void setName(String name) {
+        this.name = name;
     }
 }
