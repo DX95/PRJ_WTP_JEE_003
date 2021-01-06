@@ -112,9 +112,7 @@
 <body>
 
 <!-- 顶端开始 -->
-<div  style="width:100%; height:163px;">
-    <script type="text/javascript" src="common/js/header.js"></script>
-</div>
+<jsp:include page="header.jsp"></jsp:include>
 <!-- 顶端结束  -->
 
 <!-- 个人空间 开始-->

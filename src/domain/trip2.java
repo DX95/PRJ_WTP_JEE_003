@@ -14,6 +14,8 @@ public class trip2 implements Serializable {
     private Date date;
     private String name;
     private String s_title;
+    private double good_rate;
+    private String city;
 
     @Override
     public String toString() {
@@ -27,7 +29,25 @@ public class trip2 implements Serializable {
                 ", date=" + date +
                 ", name='" + name + '\'' +
                 ", s_title='" + s_title + '\'' +
+                ", good_rate=" + good_rate +
+                ", city='" + city + '\'' +
                 '}';
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public double getGood_rate() {
+        return good_rate;
+    }
+
+    public void setGood_rate(double good_rate) {
+        this.good_rate = good_rate;
     }
 
     public String getS_title() {

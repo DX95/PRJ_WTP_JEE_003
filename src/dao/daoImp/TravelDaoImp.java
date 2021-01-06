@@ -31,7 +31,7 @@ public class TravelDaoImp implements TravelDao {
     @Override
     public List<trip2> findallInf() {
         String sql="SELECT\n" +
-                "pic.name,price,s_title\n" +
+                "t.id,pic.name,price,s_title\n" +
                 "FROM\n" +
                 "trip t,price p,trippicture pic\n" +
                 "WHERE\n" +

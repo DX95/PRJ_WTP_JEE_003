@@ -27,16 +27,17 @@
         function moveout(y){
             y.style.fontSize="12px";
         }
+
     </script>
 
 </head>
 <body onload="time()" >
 <!-- 顶端 -->
 <input id="pic" type="hidden" value="${tid}"/>
-<div id="1" style="width:100%; height:163px;">
+<%--<div id="1" style="width:100%; height:163px;">
     <script type="text/javascript" src="common/js/header.js"></script>
-</div>
-
+</div>--%>
+<jsp:include page="header.jsp"></jsp:include>
 <!-- 内容模块开始 -->
 <div id="2" class="public-box" data-count-first="国内游">
     <div class="public-tit">
@@ -74,7 +75,7 @@
                             </tr>
                             </c:forEach>--%>
                         <tr>
-                             <td align="right"><a href="../trip/search.html">${Place[0].name}</a></td>
+                             <td align="right"><a href="#">${Place[0].name}</a></td>
                             <td width="30px"></td>
                             <td align="left"><a href="../trip/search.html">${Place[1].name}</a></td>
                         </tr>
@@ -152,11 +153,14 @@
             <!-- 场景 PRJ-WTP-WEB-003：推荐景点列表排序 - 列表1 【1/3 start】 -->
             <ul>
                 <c:forEach items="${infs}" var="inf">
-                    <li>
+                    <li <%--onclick="javascript:href='${pageContext.request.contextPath}/TripDetailServlet?id=${inf.id}'"--%>>
                         <div class="pro_list_content">
                             <!-- 场景 PRJ-WTP-WEB-002：推荐景点图像显示 【1/1 start】 -->
                             <p>
-                                <img src="image_cache/${inf.name}" width="290" height="200" border="1">
+                                <a href="${pageContext.request.contextPath}/TripDetailServlet?id=${inf.id}">
+                                    <img href="${pageContext.request.contextPath}/TripDetailServlet?id=${inf.id}" src="image_cache/${inf.name}" width="290" height="200" border="1">
+
+                                </a>
                             </p>
                             <p onmouseover="movein(this)" onmouseout="moveout(this)">
 							<span class="pro-list-price fr">
