@@ -13,6 +13,11 @@
 	href="${pageContext.request.contextPath }/common/css/common.css">
 <script type="text/javascript"
 	src="${pageContext.request.contextPath }/common/js/jquery-1.10.2.min.js"></script>
+	<style type="text/css">
+		#submit{
+			border: none;
+		}
+	</style>
 </head>
 <body>
 	<div class="topbar_js_box">
@@ -51,14 +56,14 @@
 					<!-- 实训场景017：顶部登录信息显示 - 三层选择标签 - 【开始】
 							可用数据：用户id：user  邮箱：eamil   电话：phone   -->
 					<c:choose>
-						<c:when test="${empty user}">
+						<c:when test="${empty tid}">
 							<a href="login.jsp">请登录</a>
             		 | 		<a
 								href="#">免费注册</a>
 						</c:when>
 						<c:otherwise>
-            				当前用户：
-	            			<c:choose>
+            				当前用户：${tid}
+	            			<%--<c:choose>
 								<c:when test="${not empty user.name }">${user.name }</c:when>
 								<c:otherwise>
 									<c:choose>
@@ -66,7 +71,7 @@
 										<c:otherwise>${user.email }</c:otherwise>
 									</c:choose>
 								</c:otherwise>
-							</c:choose>
+							</c:choose>--%>
 							
 							<!-- 实训场景013：活跃时长统计（二） - 链接的url重写【START】 -->
 							<a href="logout.jhtml">注销</a>
@@ -124,16 +129,17 @@
 					
 						<!-- 实训场景013：活跃时长统计（二） - action的url重写【START】 -->
 						<form class="form_search" id="headSearchForm"
-							 method="post" action="search.jhtml">
+							 method="post" action="${pageContext.request.contextPath}/SearchServlet" >
 						<!-- 实训场景013：活跃时长统计（二） - action的url重写【END】 -->
-						
-							<input type="text" id="head_search" name="search_key"
-								value="景点、主题和标题名称" class="search w_260" /> <input type="hidden"
-								id="head_triptype" name="triptype" value="" /> <input
+							<input type="text" id="type" name="type"
+								 class="search w_260" />
+							<input type="hidden"
+								id="head_triptype" name="triptype" value="" />
+							<input
 								type="hidden" id="head_start_place" name="start_place" value="" />
+							<input type="submit" class="pointer search_button" value=" " id="submit">
 						</form>
 					</div>
-					<span class="pointer search_button" id="search_btn"></span>
 				</div>
 			</div>
 		</div>
@@ -144,7 +150,7 @@
 			
 				<!-- 实训场景013：活跃时长统计（二） - 链接的url重写【START】 -->
 				<li id="home"
-					onclick="toIndex('${pageContext.request.contextPath}/<%=response.encodeURL("index.jhtml")%>')"><a>首页</a></li>
+					<%--onclick="toIndex('${pageContext.request.contextPath}/<%=response.encodeURL("index.jhtml")%>')"--%>><a href="${pageContext.request.contextPath}/PlaceServlet">首页</a></li>
 				<!-- 实训场景013：活跃时长统计（二） - 链接的url重写【END】 -->	
 				
 				<li id="ticket" class="head-live"><a href="javascript:void(0);">自驾游</a></li>
@@ -157,7 +163,7 @@
 		</div>
 	</div>
 
-	<script type="text/javascript"
-		src="${pageContext.request.contextPath }/common/js/header.js"></script>
+	<%--<script type="text/javascript"
+		src="${pageContext.request.contextPath }/common/js/header.js"></script>--%>
 </body>
 </html>

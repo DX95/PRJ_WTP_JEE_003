@@ -20,7 +20,7 @@
 	</div>
 	 header【结束】 -->
 		<!-- 顶端，引入公共部分的顶部jsp -->
-	<%@ include file="../header.jsp"%>
+	<jsp:include page="header.jsp"></jsp:include>
 	
 	<!-- 隐藏域，用于存储当前订单总价的数据 -->
 	<div style="display: none" id="current_price"></div>
@@ -52,7 +52,7 @@
 						<div class="DB_imgSet" style="display: block;">
 							<div class="DB_imgWin">
 							
-								<img src="image_cache/${trip.main_picname }" />
+								<img src="image_cache/${Detail.name}" />
 							
 							</div>
 							<div class="DB_prevBtn">
@@ -87,7 +87,7 @@
 					<div class="overview-description">
 						<div class="product-name">
 						
-							<h1>${trip.title}</h1>
+							<h1>${Detail.title}</h1>
 						
 						</div>
 
@@ -100,7 +100,7 @@
 									<span class="product-price-rmb"> 
 									
 										<span class="rmb-symbol">¥</span> 
-										<span class="product-price-value">${trip.min_price}</span>
+										<span class="product-price-value">${Detail.price}</span>
 									
 									</span> <span class="fs-12 color-style1"> 起/人(最少成团人数:10人) <i
 										class="protect-icon price-explain-icon"></i> <span
@@ -130,7 +130,7 @@
 								<div class="product-price-title color-style1">往返交通：</div>
 								
 								<div class="product-price-content">
-									<span>${trip.traffic}</span>
+									<span>${Detail.traffic}</span>
 								</div>
 							
 							</div>
@@ -156,7 +156,7 @@
 								</div>
 								
 								<div class="pull-right">
-									<span class="val">${trip.good_rate}%</span>
+									<span class="val">${Detail.good_rate}%</span>
 								</div>
 							
 							</div>

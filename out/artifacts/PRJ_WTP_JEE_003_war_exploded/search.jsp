@@ -29,9 +29,7 @@
 <body>
 <!-- header【开始】 -->
 
-<div style="width:100%; height:163px;">
-    <script type="text/javascript" src="common/js/header.js"></script>
-</div>
+<jsp:include page="header.jsp"></jsp:include>
 <!-- header【结束】 -->
 
 <!-- 主体【开始】 -->
@@ -342,8 +340,25 @@
                     </ul>
                     <div class="page">
                         <p class="count_num"><b>${PageBean.currentpage}</b>/${PageBean.totalpage}</p>
-                        <a class="prev page_no" href="#"><i class="arrow_p"></i></a>
-                        <a class="next" href="#"><i class="arrow_n"></i></a>
+                        <c:choose>
+                            <c:when test="${PageBean.currentpage<=1}">
+                                <a class="prev page_no" href="${pageContext.request.contextPath}/SearchServlet?type=${type}&rows=10&Currentpage=1"><i class="arrow_p"></i></a>
+                            </c:when>
+                            <c:otherwise>
+                                <a class="prev page_no" href="${pageContext.request.contextPath}/SearchServlet?type=${type}&rows=10&Currentpage=${PageBean.currentpage-1}"><i class="arrow_p"></i></a>
+
+                            </c:otherwise>
+                        </c:choose>
+
+                        <c:choose>
+                            <c:when test="${PageBean.currentpage>=PageBean.totalpage}">
+                                <a class="next" href="${pageContext.request.contextPath}/SearchServlet?type=${type}&rows=10&Currentpage=${PageBean.totalpage}"><i class="arrow_n"></i></a>
+                            </c:when>
+                            <c:otherwise>
+                                <a class="next" href="${pageContext.request.contextPath}/SearchServlet?type=${type}&rows=10&Currentpage=${PageBean.currentpage+1}"><i class="arrow_n"></i></a>
+
+                            </c:otherwise>
+                        </c:choose>
                     </div>
                 </div>
                 <!-- 排序筛选【结束】 -->
@@ -366,12 +381,12 @@
 								</span>
                                    <label name="origLable">起/人</label>
                                </p>
-                               <p class="good_comment"><span>98%</span>好评率</p>
+                               <p class="good_comment"><span>${list.good_rate}%</span>好评率</p>
                            </div>
                            <div class="detail">
                                <div class="detail_list">
                                    <p class="detail_title">
-                                       <span class="title_left">上海出发 |</span>
+                                       <span class="title_left">${list.city} |</span>
                                        <a href="../tourist_detail/tourist_detail.html">
                                                ${list.title}
                                        </a>

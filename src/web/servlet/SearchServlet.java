@@ -22,12 +22,12 @@ public class SearchServlet extends HttpServlet {
         String currentpages = request.getParameter("Currentpage");
         String rows = request.getParameter("rows");
         System.out.println(type);
-        String str=null;
+        /*String str=null;
         if (type!=null&&!type.equals("")){
             str = new String(type.getBytes("ISO8859-1"), "UTF-8");
         }
         System.out.println(str);
-
+*/
         int row=0;
         if (rows!=null&&!rows.equals("")){
             row=Integer.parseInt(rows);
@@ -43,8 +43,11 @@ public class SearchServlet extends HttpServlet {
         }
 
        SearchService service=new SearchServiceImp();
-       Pagebean<trip2> pagebean=service.SearchPagebean(str,row,currentpage);
+       Pagebean<trip2> pagebean=service.SearchPagebean(type,row,currentpage);
        request.setAttribute("PageBean",pagebean);
+       if(type!=null&&!type.equals("")){
+           request.setAttribute("type",type);
+       }
        request.getRequestDispatcher("/search.jsp").forward(request,response);
         //response.getWriter().write(pagebean.toString());
     }
