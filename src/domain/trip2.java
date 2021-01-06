@@ -2,6 +2,7 @@ package domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 public class trip2 implements Serializable {
     //SELECT title,traffic,hotel,price,date FROM trip t, price p WHERE t.id=p.id and title LIKE '%上海%';
@@ -16,6 +17,15 @@ public class trip2 implements Serializable {
     private String s_title;
     private double good_rate;
     private String city;
+    private List<trippicture> list;
+
+    public List<trippicture> getList() {
+        return list;
+    }
+
+    public void setList(List<trippicture> list) {
+        this.list = list;
+    }
 
     @Override
     public String toString() {
@@ -31,6 +41,7 @@ public class trip2 implements Serializable {
                 ", s_title='" + s_title + '\'' +
                 ", good_rate=" + good_rate +
                 ", city='" + city + '\'' +
+                ", list=" + list +
                 '}';
     }
 

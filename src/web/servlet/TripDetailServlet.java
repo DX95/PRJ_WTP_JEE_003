@@ -1,6 +1,8 @@
 package web.servlet;
 
+import dao.daoImp.TripDetailDaoImp;
 import domain.trip2;
+import domain.trippicture;
 import service.TripDetailService;
 import service.serviceImp.TripDetailServiceImp;
 
@@ -24,6 +26,13 @@ public class TripDetailServlet extends HttpServlet {
         }
         trip2 trip2=service.findTripDetail(id);
         System.out.println(trip2.toString());
+
+        TripDetailDaoImp daoimp=new TripDetailDaoImp();
+        List<trippicture> names = daoimp.FinadList();
+        for (trippicture name : names) {
+            System.out.println(name);
+        }
+        request.setAttribute("names",names);
         request.setAttribute("Detail",trip2);
         request.getRequestDispatcher("trip_detail.jsp").forward(request,response);
 

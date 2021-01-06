@@ -1,5 +1,7 @@
+<%@ page import="java.util.List" %>
+<%@ page import="domain.trip2" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -64,12 +66,12 @@
 						</div>
 						<div class="DB_thumSet">
 							<ul class="DB_thumMove">
-								<c:forEach items="${trip.pic_list}" var="t_pic">
-								<li>
-									<a href="image_cache/${t_pic.name}">
-										<img src="image_cache/${t_pic.name}">
-									</a>
-								</li>
+								<c:forEach items="${names}" var="pic">
+									<li>
+										<a href="image_cache/${Detail.name}">
+											<img src="image_cache/${pic.name}">
+										</a>
+									</li>
 								</c:forEach>
 							</ul>
 							<div class="DB_thumLine"></div>

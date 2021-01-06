@@ -2,6 +2,7 @@ package dao.daoImp;
 
 import dao.TripDetailDao;
 import domain.trip2;
+import domain.trippicture;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import until.DBuntil;
@@ -33,5 +34,10 @@ public class TripDetailDaoImp implements TripDetailDao {
         System.out.println(list);
         trip2 trip2 = template.queryForObject(sql, new BeanPropertyRowMapper<trip2>(trip2.class), list.toArray());
         return trip2;
+    }
+
+    public List<trippicture> FinadList(){
+        String sql="select name from trippicture ";
+        return template.query(sql,new BeanPropertyRowMapper<trippicture>(trippicture.class));
     }
 }
