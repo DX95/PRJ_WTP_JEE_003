@@ -369,7 +369,7 @@
                <c:forEach items="${PageBean.list}" var="list" >
                    <div class="recommend">
                        <div class="detail">
-                           <a class="detail_img" href="#">
+                           <a class="detail_img" href="${pageContext.request.contextPath}/TripDetailServlet?id=${list.id}">
                                <img src="image_cache/${list.name}" width="195" height="130">
                                <span class="detail_tag detail_tag_blue">自驾游</span>
                            </a>

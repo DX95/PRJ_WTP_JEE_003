@@ -74,7 +74,7 @@
 							</c:choose>--%>
 							
 							<!-- 实训场景013：活跃时长统计（二） - 链接的url重写【START】 -->
-							<a href="logout.jhtml">注销</a>
+							<a href="${pageContext.request.contextPath}/LoginOutService">注销</a>
 							<!-- 实训场景013：活跃时长统计（二） - 链接的url重写【END】 -->
 							
 						</c:otherwise>

@@ -114,7 +114,7 @@
 								<div class="product-price-title color-style1">出 发 地：</div>
 
 								<div class="product-price-content">
-									<span>${trip.start.name}</span>
+									<span>中国</span>
 								</div>
 								
 							</div>
@@ -420,9 +420,9 @@
 																				<i class="traffic-bus-icon"></i>
 																			</div>
 																			<div>
-																				<p title="管家加州派酒店（地址：成都市金牛区二环路北一段14号）">上车点：人民广场4号口</p>
+																				<p title="管家加州派酒店（地址：成都市金牛区二环路北一段14号）">上车点：${traffic.go_point}</p>
 																				<p>
-																					发车时间：<span class="bus-time">8:00</span>
+																					发车时间：<span class="bus-time">${traffic.go_time}</span>
 																				</p>
 																			</div>
 																		</li>
@@ -442,9 +442,9 @@
 																				<i class="traffic-bus-icon"></i>
 																			</div>
 																			<div>
-																				<p title="九寨沟沟口">上车点：西湖</p>
+																				<p title="九寨沟沟口">上车点：${traffic.return_point}</p>
 																				<p>
-																					发车时间：<span class="bus-time">第二天16:00</span>
+																					发车时间：<span class="bus-time">${traffic.return_time}</span>
 																				</p>
 																			</div>
 																		</li>

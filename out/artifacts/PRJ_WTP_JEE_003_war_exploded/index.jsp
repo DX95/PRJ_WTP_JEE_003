@@ -75,29 +75,29 @@
                             </tr>
                             </c:forEach>--%>
                         <tr>
-                             <td align="right"><a href="#">${Place[0].name}</a></td>
+                             <td align="right"><a href="${pageContext.request.contextPath}/SearchServlet?type2=${Place[0].name}">${Place[0].name}</a></td>
                             <td width="30px"></td>
-                            <td align="left"><a href="../trip/search.html">${Place[1].name}</a></td>
+                            <td align="left"><a href="${pageContext.request.contextPath}/SearchServlet?type2=${Place[1].name}">${Place[1].name}</a></td>
                         </tr>
                         <tr>
-                            <td align="right"><a href="../trip/search.html">${Place[2].name}</a></td>
+                            <td align="right"><a href="${pageContext.request.contextPath}/SearchServlet?type2=${Place[2].name}">${Place[2].name}</a></td>
                             <td></td>
-                            <td align="left"><a href="../trip/search.html">${Place[3].name}</a></td>
+                            <td align="left"><a href="${pageContext.request.contextPath}/SearchServlet?type2=${Place[3].name}">${Place[3].name}</a></td>
                         </tr>
                         <tr>
-                            <td align="right"><a href="../trip/search.html">${Place[4].name}</a></td>
+                            <td align="right"><a href="${pageContext.request.contextPath}/SearchServlet?type2=${Place[4].name}">${Place[4].name}</a></td>
                             <td></td>
-                            <td align="left"><a href="../trip/search.html">${Place[5].name}</a></td>
+                            <td align="left"><a href="${pageContext.request.contextPath}/SearchServlet?type2=${Place[5].name}">${Place[5].name}</a></td>
                         </tr>
                         <tr>
-                            <td align="right"><a href="../trip/search.html">${Place[6].name}</a></td>
+                            <td align="right"><a href="${pageContext.request.contextPath}/SearchServlet?type2=${Place[6].name}">${Place[6].name}</a></td>
                             <td></td>
-                            <td align="left"><a href="../trip/search.html">${Place[7].name}</a></td>
+                            <td align="left"><a href="${pageContext.request.contextPath}/SearchServlet?type2=${Place[7].name}">${Place[7].name}</a></td>
                         </tr>
                         <tr>
-                            <td align="right"><a href="../trip/search.html">${Place[8].name}</a></td>
+                            <td align="right"><a href="${pageContext.request.contextPath}/SearchServlet?type2=${Place[8].name}">${Place[8].name}</a></td>
                             <td></td>
-                            <td align="left"><a href="../trip/search.html">${Place[9].name}</a></td>
+                            <td align="left"><a href="${pageContext.request.contextPath}/SearchServlet?type2=${Place[9].name}">${Place[9].name}</a></td>
                         </tr>
                     </table>
                     <!-- 场景 PRJ-WTP-WEB-004：热门景点 - 景点列表1 【1/2 end】 -->

@@ -32,7 +32,7 @@ public class SearchDaoImp implements SearchDao {
     @Override
     public List<trip2> findList(String type, int star,int row) {
         String sql="SELECT \n" +
-                "title,traffic,hotel,price,time,pic.name,good_rate,p.date\n" +
+                "t.id,title,traffic,hotel,price,time,pic.name,good_rate,p.date\n" +
                 "FROM \n" +
                 "trip t, price p ,trippicture pic \n" +
                 "WHERE \n" +
