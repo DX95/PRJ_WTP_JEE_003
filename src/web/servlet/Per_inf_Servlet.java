@@ -31,6 +31,13 @@ public class Per_inf_Servlet extends HttpServlet {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         String tid = (String) session.getAttribute("tid");
+        if (tid==null||tid.equals("")){
+            out.println("<script type='text/javascript'>");
+            out.println("alert('请先登录！');");
+            out.println("window.location = 'http://localhost:8089/PRJ_WTP_JEE_003_war_exploded/login.jsp'");
+            out.println("</script>");
+            return;
+        }
         System.out.println("tid"+tid);
 
         String sex = request.getParameter("sex");

@@ -1,6 +1,7 @@
 package web.File;
 
 import domain.User;
+import org.springframework.beans.factory.NoUniqueBeanDefinitionException;
 import service.UserService;
 import service.serviceImp.UserServiceImp;
 
@@ -10,6 +11,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebFilter("/*")
 public class LoginFilter implements Filter {
@@ -18,30 +20,30 @@ public class LoginFilter implements Filter {
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
-        UserService service=new UserServiceImp();
         HttpServletRequest request= (HttpServletRequest) req;
         HttpServletResponse response= (HttpServletResponse) resp;
-        //获取Cookie
-        Cookie[] cookies = request.getCookies();
-        String tid=null;
-        String pwd=null;
-        if (cookies!=null){
-            for (Cookie cookie : cookies) {
-                if (cookie.equals("tid")){
-                    tid=cookie.getValue();
-                }else if (cookie.equals("pwd")){
-                    pwd=cookie.getValue();
-                }
+
+        String requestURI = request.getRequestURI();
+        if (requestURI.contains("/login.jhtml")||requestURI.contains("/login.jsp")||
+                requestURI.contains("/code.jhtml")||requestURI.contains("/register.jhtml")||requestURI.contains("/common")
+        ||requestURI.contains("/css/")||requestURI.contains("/image_cache/")||requestURI.contains("/images/")||requestURI.contains("/img/")
+                ||requestURI.contains("/js/")
+        )
+        {
+            chain.doFilter(request,response);
+        }else {
+            Object use = request.getSession().getAttribute("use");
+            if (use!=null){
+                chain.doFilter(request,response);
+            }else{
+                PrintWriter out = response.getWriter();
+                out.println("<script type='text/javascript'>");
+                out.println("alert('请先登录！');");
+                out.println("window.location = 'http://localhost:8089/PRJ_WTP_JEE_003_war_exploded/login.jsp'");
+                out.println("</script>");
             }
         }
-        if (tid!=null&&pwd!=null){
-            User login = service.login(tid, pwd);
-            if (login!=null){
-                request.getSession().setAttribute("login_use",login);
-                System.out.println("Login不为空！");
-            }
-        }
-        chain.doFilter(request, response);
+
     }
 
     public void destroy() {

@@ -1,5 +1,6 @@
 package web.servlet;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import domain.User;
 import service.UserService;
 import service.serviceImp.UserServiceImp;
@@ -11,28 +12,29 @@ import java.io.IOException;
 
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /*HttpSession session = request.getSession();
+        HttpSession session = request.getSession();
         String checkcode_server = (String) session.getAttribute("CHECKCODE_SERVER");
-        session.invalidate();*/
-        System.out.println("login");
+        session.invalidate();
+        System.out.println("验证码："+checkcode_server);
         UserService service=new UserServiceImp();
         String tid = request.getParameter("tid");
         String pwd = request.getParameter("pwd");
         String code=request.getParameter("code");
-        HttpSession session = request.getSession();
-        /*if (checkcode_server==null||!checkcode_server.equalsIgnoreCase(code)){
+        //HttpSession session = request.getSession();
+        if (checkcode_server==null||!checkcode_server.equalsIgnoreCase(code)){
             response.sendRedirect(request.getContextPath()+"/login.jsp?type=codeerror");
             return;
-        }*/
+        }
         User use=service.login(tid,pwd);
         // System.out.println(use.toString());
         if (use==null){
             response.sendRedirect(request.getContextPath()+"/login.jsp?type=loginerror");
         }else {
+            HttpSession session2 = request.getSession();
             //将用户信息存入session域
-            session.setAttribute("use",use);
+            session2.setAttribute("use",use);
             //将用户账号存入session域
-            session.setAttribute("tid",tid);
+            session2.setAttribute("tid",tid);
             //保存账号密码到cookie
             Cookie cookie = new Cookie("tid",tid);
             Cookie cookie2 = new Cookie("pwd",pwd);
